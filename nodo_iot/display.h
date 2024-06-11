@@ -11,9 +11,11 @@ class Display {
 		void printLogo(unsigned char *logo, int size);
 		void printHeader();
 		bool printMessage(String message, unsigned int row, unsigned int column);
+		void printError(String message);
 	private:
-    ACROBOTIC_SSD1306 oled;
-    HardwareSerial* serial;
+		ACROBOTIC_SSD1306 oled;
+		HardwareSerial* serial;
+		void printErrorHeader();
 };
 
 #endif
