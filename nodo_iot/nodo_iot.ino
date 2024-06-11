@@ -1,7 +1,10 @@
-#include "logos.h"
+#include "actuator.h"
 #include "display.h"
+#include "logos.h"
 #include "sensor.h"
 
+Actuator actuator1(LED_BUILTIN);
+Actuator actuator2(7);
 Display display;
 Sensor sensor;
 
@@ -34,6 +37,12 @@ void loop() {
 
     display.printMessage("T: " + String(temperature) + " C", 3, 0);
     display.printMessage("H: " + String(humidity) + " %", 4, 0);
-    delay(500);
+
+    delay(1000);
+    actuator1.turnOff();
+    actuator2.turnOn();
+    delay(1000);
+    actuator1.turnOn();
+    actuator2.turnOff();
   }
 }
