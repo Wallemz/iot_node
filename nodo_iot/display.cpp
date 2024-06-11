@@ -1,9 +1,7 @@
 #include "display.h"
 
-// Constructor
 Display::Display() : serial(nullptr) {}
 
-// Inicializa la pantalla OLED y configura el objeto Serial
 void Display::init(HardwareSerial* serial) {
     this->serial = serial;
     Wire.begin();
